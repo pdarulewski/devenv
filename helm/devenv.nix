@@ -1,0 +1,9 @@
+{
+  pkgs,
+  ...
+}:
+{
+  packages = [
+    pkgs.helm
+  ];
+}
