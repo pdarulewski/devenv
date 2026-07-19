@@ -25,6 +25,7 @@
             pkgs.goimports-reviser
             pkgs.golangci-lint
             pkgs.gotestsum
+            pkgs.just
             pkgs.oapi-codegen
             pkgs.pre-commit
             pkgs.protobuf
