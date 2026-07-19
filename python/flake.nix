@@ -17,9 +17,13 @@
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in {
+        formatter = pkgs.nixfmt-tree;
         devShells.default = pkgs.mkShell {
           packages = [
             inputs.python.legacyPackages.${system}.python312
+            pkgs.ruff
+            pkgs.taplo
+            pkgs.ty
             pkgs.uv
           ];
         };
