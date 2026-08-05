@@ -27,6 +27,7 @@
         devShells.default = pkgs.mkShell {
           packages = [
             pkgs.air
+            pkgs.delve
             pkgs.go
             pkgs.go-migrate
             pkgs.go-mockery
