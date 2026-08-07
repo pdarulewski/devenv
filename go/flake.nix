@@ -34,8 +34,11 @@
             pkgs.gofumpt
             pkgs.goimports-reviser
             pkgs.golangci-lint
+            pkgs.gopls
             pkgs.gotestsum
+            pkgs.gotools
             pkgs.just
+            pkgs.kubernetes-helm
             pkgs.oapi-codegen
             pkgs.pre-commit
             pkgs.protobuf

@@ -1,0 +1,17 @@
+---
+version: "2"
+
+linters:
+  default: all
+  disable:
+    - depguard
+    - noinlineerr
+    - varnamelen
+    # deprecated
+    - gomodguard
+    - wsl
+
+formatters:
+  enable:
+    - gofumpt
+    - goimports

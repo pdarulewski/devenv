@@ -1,0 +1,22 @@
+load('ext://namespace', 'namespace_create')
+
+allow_k8s_contexts([
+    'docker-desktop',
+])
+
+namespace = 'apps'
+namespace_create(namespace)
+
+docker_build(
+    ref='app',
+    context='.',
+    dockerfile='build/Dockerfile',
+    extra_tag='dev'
+)
+
+k8s_yaml(helm(
+    './deployments/app',
+    name='app',
+    namespace=namespace,
+    values=[],
+))

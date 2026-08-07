@@ -1,0 +1,43 @@
+---
+nameOverride: "app"
+fullnameOverride: "app"
+
+args:
+
+image:
+  pullPolicy: Always
+  tag: dev
+  repository: app
+
+configmap:
+
+containerPort: 8080
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+livenessProbe:
+  httpGet:
+    path: /healthz
+    port: http
+
+readinessProbe:
+  httpGet:
+    path: /healthz
+    port: http
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80

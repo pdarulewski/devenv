@@ -1,0 +1,9 @@
+---
+all: true
+filename: 'mocks.gen.go'
+include-auto-generated: true
+recursive: true
+template: testify
+packages:
+  github.com/pdarulewski/go/internal:
+  github.com/pdarulewski/go/pkg:
